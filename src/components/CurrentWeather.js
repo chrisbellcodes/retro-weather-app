@@ -1,6 +1,9 @@
 import React from "react";
 
-const CurrentWeather = (props) => {
+const CurrentWeather = ({
+    temperature,
+    weathercode
+}) => {
     
     return(
         <div className="CurrentWeather">
@@ -8,7 +11,7 @@ const CurrentWeather = (props) => {
                 <img src={'/logo192.png'} alt="weather" />
             </div>
             <div className="retro-lingo">Rad!</div>
-            <div className="CurrentWeather__temp"><span className="temp">72º</span><div className="temp-measurement">F</div></div>
+            <div className="CurrentWeather__temp"><span className="temp">{temperature}º</span><div className="temp-measurement">F</div></div>
         </div>
     )
 }

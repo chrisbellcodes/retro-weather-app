@@ -3,11 +3,15 @@ import Day from "./Day";
 
 const DailyWeather = (props) => {
     
-
     return(
-        <div>
-            "YAS FROM DailyWeather"
-            <Day/>
+        <div className="DailyWeather">
+            <Day />
+            <Day />
+            <Day />
+            <Day />
+            <Day />
+            <Day />
+            <Day />
         </div>
     )
 }

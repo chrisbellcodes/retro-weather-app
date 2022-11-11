@@ -3,10 +3,10 @@ import { useFetch } from "./useFetch";
 import { find } from 'geo-tz'
 
 export const useLocation = () => {
-    const [latitude, setLatitude] = useState(null)
-    const [longitude, setLongitude] = useState(null)
-    const [timezone, setTimezone] = useState('')
-    const [cityName, setCityName] = useState('New York')
+    const [latitude, setLatitude] = useState(0.00)
+    const [longitude, setLongitude] = useState(0.00)
+    const [timezone, setTimezone] = useState('America/New_York')
+    const [cityName, setCityName] = useState('')
     const [locationError, setLocationError] = useState(false)
 
     function success(position) {
@@ -25,7 +25,9 @@ export const useLocation = () => {
         timeout: 27000
     };
 
+    useEffect(() => {
         navigator.geolocation.watchPosition(success, error, options);
+    },[])
 
 
     // const cityApiURL = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities/'
@@ -46,7 +48,7 @@ export const useLocation = () => {
 
     // console.log(result)
 
-    // console.log({latitude, longitude, timezone, cityName, locationError })
+    console.log({latitude, longitude, timezone, cityName, locationError })
 
     return {latitude, longitude, timezone, cityName, locationError }
 }

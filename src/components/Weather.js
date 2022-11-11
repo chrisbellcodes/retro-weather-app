@@ -10,9 +10,9 @@ const Weather = () => {
 const {latitude, longitude, cityName, timezone} = useLocation()
 
 const parmaData = {
-    latitude: 40.7637656 || latitude,
-    longitude:-73.914535 || longitude,
-    timezone:'America/New_York' || timezone,
+    latitude: latitude,
+    longitude:longitude,
+    timezone:timezone,
     current_weather: true,
     temperature_unit: "fahrenheit"
   }

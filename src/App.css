@@ -7,7 +7,7 @@
 
 .weather {
     width: 100%;
-    max-width: 750px;
+    max-width: 950px;
     border: 2px solid black;
     border-radius: 0.75rem;
     margin-top: 5%;
@@ -104,15 +104,18 @@
 /* <<<<<<<<<<  Day  >>>>>>>>>> */
 
 .Day {
-    padding: var(--globle-padding);
+    padding: 5px;
     width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid hotpink;
+    justify-content: space-between;
 }
 
 .Day__text {
   text-align: center;
+  margin-top: 5px;
 }
 .Day__img {
     width: 100%;
@@ -129,14 +132,19 @@
 }
 
 .Day__img-contianer.img-container {
-    max-width: 70px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
 }
 
 .climate-text {
     text-align: center;
     margin: 5px 0px;
+    font-family: 'Exo';
 }

@@ -2,13 +2,17 @@ import React from 'react';
 import { useFetch } from "../custom_hooks/useFetch";
 import CurrentWeather from "../components/CurrentWeather";
 import DailyWeather from "../components/DailyWeather";
+import { useLocation } from '../custom_hooks/useLocation';
+
 
 const Weather = () => {
 
+const {latitude, longitude, cityName, timezone} = useLocation()
+
 const parmaData = {
-    latitude:40.76,
-    longitude:-73.91,
-    timezone: 'America/Chicago',
+    latitude: 40.7637656 || latitude,
+    longitude:-73.914535 || longitude,
+    timezone:'America/New_York' || timezone,
     current_weather: true,
     temperature_unit: "fahrenheit"
   }
@@ -35,7 +39,7 @@ const parmaData = {
     
     return (
         <>
-            <h1 className='city-name'>Chicago</h1>
+            <h1 className='city-name'>{cityName}</h1>
             <CurrentWeather {...current} />
             <DailyWeather {...daily}/>
         </>
